@@ -7,28 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PFinalTeleinf.Models
+namespace PFinalTeleinf.Models.ViewModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TIPOEXAMEN
+    public partial class NOMBRE_EXAMEN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TIPOEXAMEN()
+        public NOMBRE_EXAMEN()
         {
             this.CITA_TIPOEXAMEN = new HashSet<CITA_TIPOEXAMEN>();
-            this.NOMBRE_EXAMEN = new HashSet<NOMBRE_EXAMEN>();
             this.RESULTADO_EXAMEN = new HashSet<RESULTADO_EXAMEN>();
         }
     
-        public int ID_TIPOEXAMEN { get; set; }
-        public string NOMBRE_TIPOEXAMEN { get; set; }
+        public int ID_NOMBRE_EXAMEN { get; set; }
+        public Nullable<int> ID_TIPOEXAMEN { get; set; }
+        public string NOMBRE_EXAMEN1 { get; set; }
+        public string RANGO_INFERIOR { get; set; }
+        public string RANGO_SUPERIOR { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CITA_TIPOEXAMEN> CITA_TIPOEXAMEN { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NOMBRE_EXAMEN> NOMBRE_EXAMEN { get; set; }
+        public virtual TIPOEXAMEN TIPOEXAMEN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RESULTADO_EXAMEN> RESULTADO_EXAMEN { get; set; }
     }

@@ -7,20 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PFinalTeleinf.Models
+namespace PFinalTeleinf.Models.ViewModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class RESULTADO_PACIENTE
+    public partial class CITA
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public RESULTADO_PACIENTE()
+        public CITA()
         {
-            this.RESULTADO_EXAMEN = new HashSet<RESULTADO_EXAMEN>();
+            this.CITA_TIPOEXAMEN = new HashSet<CITA_TIPOEXAMEN>();
+            this.RESULTADO_PACIENTE = new HashSet<RESULTADO_PACIENTE>();
         }
     
-        public int ID_RESULTADOPACIENTE { get; set; }
+        public int ID_CITA { get; set; }
+        public Nullable<int> ID_USUARIO { get; set; }
         public string NOMBREPACIENTE { get; set; }
         public string APELLIDO { get; set; }
         public string CEDULA { get; set; }
@@ -28,13 +30,11 @@ namespace PFinalTeleinf.Models
         public string TELEFONO { get; set; }
         public Nullable<System.DateTime> FECHANACIMIENTO { get; set; }
         public Nullable<System.DateTime> FECHAPROGRAMADA { get; set; }
-        public Nullable<System.DateTime> FECHARESULTADO { get; set; }
-        public Nullable<int> ID_CITA { get; set; }
-        public Nullable<int> ID_USUARIO { get; set; }
     
-        public virtual CITA CITA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RESULTADO_EXAMEN> RESULTADO_EXAMEN { get; set; }
+        public virtual ICollection<CITA_TIPOEXAMEN> CITA_TIPOEXAMEN { get; set; }
         public virtual USUARIO USUARIO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RESULTADO_PACIENTE> RESULTADO_PACIENTE { get; set; }
     }
 }

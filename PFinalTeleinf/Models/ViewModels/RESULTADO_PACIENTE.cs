@@ -7,33 +7,34 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PFinalTeleinf.Models
+namespace PFinalTeleinf.Models.ViewModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class USUARIO
+    public partial class RESULTADO_PACIENTE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public USUARIO()
+        public RESULTADO_PACIENTE()
         {
-            this.CITA = new HashSet<CITA>();
-            this.RESULTADO_PACIENTE = new HashSet<RESULTADO_PACIENTE>();
+            this.RESULTADO_EXAMEN = new HashSet<RESULTADO_EXAMEN>();
         }
     
-        public int ID_USUARIO { get; set; }
-        public string NOMBREUSUARIO { get; set; }
+        public int ID_RESULTADOPACIENTE { get; set; }
+        public string NOMBREPACIENTE { get; set; }
         public string APELLIDO { get; set; }
         public string CEDULA { get; set; }
         public string DIRECCION { get; set; }
         public string TELEFONO { get; set; }
-        public Nullable<System.DateTime> FECHANAMIENTO { get; set; }
-        public Nullable<int> ID_ROL { get; set; }
+        public Nullable<System.DateTime> FECHANACIMIENTO { get; set; }
+        public Nullable<System.DateTime> FECHAPROGRAMADA { get; set; }
+        public Nullable<System.DateTime> FECHARESULTADO { get; set; }
+        public Nullable<int> ID_CITA { get; set; }
+        public Nullable<int> ID_USUARIO { get; set; }
     
+        public virtual CITA CITA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CITA> CITA { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RESULTADO_PACIENTE> RESULTADO_PACIENTE { get; set; }
-        public virtual ROL ROL { get; set; }
+        public virtual ICollection<RESULTADO_EXAMEN> RESULTADO_EXAMEN { get; set; }
+        public virtual USUARIO USUARIO { get; set; }
     }
 }

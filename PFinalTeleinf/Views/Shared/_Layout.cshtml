@@ -4,65 +4,73 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
-    <link rel="stylesheet" href="../../assets/css/cs-skin-elastic.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <title>Laboratorios | MINSA </title>
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/cs-skin-elastic.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
+    <div id="right-panel" class="right-panel">
 
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a id="antiSubray" href="index.html"><i class="menu-icon fa fa-laptop"></i>Inicio </a>
-                    </li>
-                    <li class="menu-title">Menú</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" id="antiSubray" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-calendar-o"></i>Citas</a>
-                        <ul id="antiSubray" class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-pencil-square-o"></i><a id="antiSubray" href="CrearCitas.html">Crear Cita a Paciente</a></li>
-                            <li><i class="fa fa-eye"></i><a id="antiSubray" href="index.html">Citas Programadas</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" id="antiSubray" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-file-text-o"></i>Resultados</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-pencil-square-o"></i><a id="antiSubray" href="CrearResultados.html">Registrar Resultados</a></li>
-                            <li><i class="fa fa-eye"></i><a id="antiSubray" href="VerResultados.html">Ver Resultados</a></li>
-                        </ul>
-                    </li>
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index">Laboratorios | MINSA</a>
+                    @*<a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>*@
+                </div>
+            </div>
+            <div class="top-right">
+                <div class="header-menu">
 
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        
-            <div class="clearfix"></div>
+                    <div class="user-area dropdown float-right">
+                        <div class="header-menu">
+                            <div class="user-area dropdown float-right">
+                                Rol:  Nombre Apellido
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header><!-- /header -->
+        <!-- Header-->
+        <!-- Left Panel -->
+        <aside id="left-panel" class="left-panel">
+            <nav class="navbar navbar-expand-sm navbar-default">
+
+                <div id="main-menu" class="main-menu collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a id="antiSubray" href="Index"><i class="menu-icon fa fa-laptop"></i>Inicio </a>
+                        </li>
+                        <li class="menu-title">Menú</li><!-- /.menu-title -->
+                        <li class="menu-item-has-children dropdown show">
+                            <a href="#" id="antiSubray" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+                                <i class="menu-icon fa fa-calendar-o"></i>Citas
+                            </a>
+                            <ul id="antiSubray" class="sub-menu children dropdown-menu show">
+                                <li><i class="fa fa-pencil-square-o"></i><a id="antiSubray" href="CrearCita">Crear Cita a Pacientes</a></li>
+                                <li><i class="fa fa-eye"></i><a id="antiSubray" href="Index">Citas Programadas</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children dropdown show">
+                            <a href="#" id="antiSubray" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true"> <i class="menu-icon fa fa-file-text-o"></i>Resultados</a>
+                            <ul class="sub-menu children dropdown-menu show">
+                                <li><i class="fa fa-pencil-square-o"></i><a id="antiSubray" href="CrearResultados.html">Registrar Resultados</a></li>
+                                <li><i class="fa fa-eye"></i><a id="antiSubray" href="VerResultados.html">Ver Resultados</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </aside><!-- /#left-panel -->
+        <div class="body-content">
+            @RenderBody()
+            <hr />
+
+
 
             <footer class="site-footer">
                 <div class="footer-inner bg-white">
@@ -76,11 +84,12 @@
                     </div>
                 </div>
             </footer>
-        
-    </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+        </div>
 </body>
 </html>

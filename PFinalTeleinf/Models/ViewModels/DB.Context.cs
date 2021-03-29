@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PFinalTeleinf.Models
+namespace PFinalTeleinf.Models.ViewModels
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class laboratorioDBEntities : DbContext
+    public partial class laboratorioDBEntities1 : DbContext
     {
-        public laboratorioDBEntities()
-            : base("name=laboratorioDBEntities")
+        public laboratorioDBEntities1()
+            : base("name=laboratorioDBEntities1")
         {
         }
     

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PFinalTeleinf.Models
+namespace PFinalTeleinf.Models.ViewModels
 {
     using System;
     using System.Collections.Generic;

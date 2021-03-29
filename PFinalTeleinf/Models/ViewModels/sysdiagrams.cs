@@ -7,20 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PFinalTeleinf.Models
+namespace PFinalTeleinf.Models.ViewModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CITA_TIPOEXAMEN
+    public partial class sysdiagrams
     {
-        public int ID_CITA_EXAMEN { get; set; }
-        public Nullable<int> ID_TIPOEXAMEN { get; set; }
-        public Nullable<int> ID_NOMBRE_EXAMEN { get; set; }
-        public Nullable<int> ID_CITA { get; set; }
-    
-        public virtual CITA CITA { get; set; }
-        public virtual TIPOEXAMEN TIPOEXAMEN { get; set; }
-        public virtual NOMBRE_EXAMEN NOMBRE_EXAMEN { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

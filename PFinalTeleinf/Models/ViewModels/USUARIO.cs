@@ -7,30 +7,33 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PFinalTeleinf.Models
+namespace PFinalTeleinf.Models.ViewModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class NOMBRE_EXAMEN
+    public partial class USUARIO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NOMBRE_EXAMEN()
+        public USUARIO()
         {
-            this.CITA_TIPOEXAMEN = new HashSet<CITA_TIPOEXAMEN>();
-            this.RESULTADO_EXAMEN = new HashSet<RESULTADO_EXAMEN>();
+            this.CITA = new HashSet<CITA>();
+            this.RESULTADO_PACIENTE = new HashSet<RESULTADO_PACIENTE>();
         }
     
-        public int ID_NOMBRE_EXAMEN { get; set; }
-        public Nullable<int> ID_TIPOEXAMEN { get; set; }
-        public string NOMBRE_EXAMEN1 { get; set; }
-        public string RANGO_INFERIOR { get; set; }
-        public string RANGO_SUPERIOR { get; set; }
+        public int ID_USUARIO { get; set; }
+        public string NOMBREUSUARIO { get; set; }
+        public string APELLIDO { get; set; }
+        public string CEDULA { get; set; }
+        public string DIRECCION { get; set; }
+        public string TELEFONO { get; set; }
+        public Nullable<System.DateTime> FECHANAMIENTO { get; set; }
+        public Nullable<int> ID_ROL { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CITA_TIPOEXAMEN> CITA_TIPOEXAMEN { get; set; }
-        public virtual TIPOEXAMEN TIPOEXAMEN { get; set; }
+        public virtual ICollection<CITA> CITA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RESULTADO_EXAMEN> RESULTADO_EXAMEN { get; set; }
+        public virtual ICollection<RESULTADO_PACIENTE> RESULTADO_PACIENTE { get; set; }
+        public virtual ROL ROL { get; set; }
     }
 }

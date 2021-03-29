@@ -7,34 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PFinalTeleinf.Models
+namespace PFinalTeleinf.Models.ViewModels
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CITA
+    public partial class TIPOEXAMEN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CITA()
+        public TIPOEXAMEN()
         {
             this.CITA_TIPOEXAMEN = new HashSet<CITA_TIPOEXAMEN>();
-            this.RESULTADO_PACIENTE = new HashSet<RESULTADO_PACIENTE>();
+            this.NOMBRE_EXAMEN = new HashSet<NOMBRE_EXAMEN>();
+            this.RESULTADO_EXAMEN = new HashSet<RESULTADO_EXAMEN>();
         }
     
-        public int ID_CITA { get; set; }
-        public Nullable<int> ID_USUARIO { get; set; }
-        public string NOMBREPACIENTE { get; set; }
-        public string APELLIDO { get; set; }
-        public string CEDULA { get; set; }
-        public string DIRECCION { get; set; }
-        public string TELEFONO { get; set; }
-        public Nullable<System.DateTime> FECHANACIMIENTO { get; set; }
-        public Nullable<System.DateTime> FECHAPROGRAMADA { get; set; }
+        public int ID_TIPOEXAMEN { get; set; }
+        public string NOMBRE_TIPOEXAMEN { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CITA_TIPOEXAMEN> CITA_TIPOEXAMEN { get; set; }
-        public virtual USUARIO USUARIO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RESULTADO_PACIENTE> RESULTADO_PACIENTE { get; set; }
+        public virtual ICollection<NOMBRE_EXAMEN> NOMBRE_EXAMEN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RESULTADO_EXAMEN> RESULTADO_EXAMEN { get; set; }
     }
 }
