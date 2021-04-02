@@ -88,7 +88,6 @@
                                         <div class="col-12 col-md-9">
 
                                             @Html.TextBoxFor(d => d.ApellidoPacient, "", new { @class = "form-control", @placeholder = "Escriba el apellido..." })
-                                            @*<input type="text" id="text-input" name="text-input" placeholder="Escriba el apellido..." class="form-control">*@
 
                                             <small class="form-text text-muted">Ejemplo: Delgado</small>
                                         </div>
@@ -100,24 +99,21 @@
                                         <div class="col-12 col-md-9">
 
                                             @Html.TextBoxFor(d => d.CedulaPacient, "", new { @class = "form-control", @placeholder = "Escriba su cedula..." })
-                                            @*<input type="text" id="text-input" name="text-input" placeholder="Escriba su cédula..." class="form-control">*@
-
                                             <small class="form-text text-muted">Ejemplo: 00-000-000</small>
                                         </div>
                                     </div>
 
 
 
-                                    <!--<div class="row form-group">
+                                    <div class="row form-group">
                                         <div class="col col-md-3">
                                             <label for="text-input" class=" form-control-label">Fecha de Nacimiento:</label>
                                         </div>
                                         <div class="col-12 col-md-9">
 
-                                            @Html.TextBoxFor(d => d.FechaNac, "", new { @class = "form-control", @type = "date" })-->
-                                            @*<input type="date" id="text-input" name="text-input" placeholder="Text" class="form-control">*@
-
-                                            <!--<small class="form-text text-muted">Escoja su fecha de nacimiento...</small>
+                                            @Html.TextBoxFor(d => d.FechaNac, "", new { @class = "form-control", @type = "date" })
+                                           
+                                            <small class="form-text text-muted">Escoja su fecha de nacimiento...</small>
                                         </div>
                                     </div>
 
@@ -129,12 +125,12 @@
                                         </div>
                                         <div class="col-12 col-md-9">
 
-                                            @Html.TextBoxFor(d => d.FechaPrCita, "", new { @class = "form-control", @type = "date" })-->
-                                            @*<input type="date" id="text-input" name="text-input" placeholder="Text" class="form-control">*@
+                                            @Html.TextBoxFor(d => d.FechaPrCita, "", new { @class = "form-control", @type = "date" })
+                                           
 
-                                            <!--<small class="form-text text-muted">Programe la fecha para la cita...</small>
+                                            <small class="form-text text-muted">Programe la fecha para la cita...</small>
                                         </div>
-                                    </div>-->
+                                    </div>
 
 
                                     <div class="row form-group">
@@ -144,7 +140,7 @@
                                         <div class="col-12 col-md-9">
 
                                             @Html.TextBoxFor(d => d.DireccionPacient, "", new { @class = "form-control", @placeholder = "Escriba su dirección..." })
-                                            @*<input type="text" id="text-input" name="text-input" placeholder="Escriba su dirección.." class="form-control">*@
+                                           
 
                                             <small class="form-text text-muted">Ejemplo: Las Tablas...</small>
                                         </div>
@@ -156,7 +152,7 @@
                                         <div class="col-12 col-md-9">
 
                                             @Html.TextBoxFor(d => d.TelefonoPacient, "", new { @class = "form-control", @placeholder = "Escriba su número de teléfono..." })
-                                            @*<input type="text" id="text-input" name="text-input" placeholder="Escriba su número de teléfono..." class="form-control">*@
+                                           
 
                                             <small class="form-text text-muted">Ejemplo: 0000-000</small>
                                         </div>

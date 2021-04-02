@@ -13,10 +13,10 @@ namespace PFinalTeleinf.Controllers
     {
         // GET: laboratorioDB
        
-        public ActionResult Index()
+        public ActionResult MostrarCita()
         {
             List<ListTablaViewModel> lst;
-            using (laboratorioDBEntities1 db= new laboratorioDBEntities1())
+            using (laboratorioDBEntities2 db= new laboratorioDBEntities2())
             {
                  lst = (from d in db.CITA
                            select new ListTablaViewModel
@@ -28,8 +28,8 @@ namespace PFinalTeleinf.Controllers
                                CedulaPacient = d.CEDULA,
                                DireccionPacient = d.DIRECCION,
                                TelefonoPacient = d.TELEFONO,
-                               //FechaNac = (DateTime)d.FECHANACIMIENTO,
-                               //FechaPrCita = (DateTime)d.FECHAPROGRAMADA
+                               FechaNac =  d.FECHANACIMIENTO,
+                               FechaPrCita = d.FECHAPROGRAMADA
 
                            }).ToList();
             }
@@ -49,7 +49,7 @@ namespace PFinalTeleinf.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (laboratorioDBEntities1 db= new laboratorioDBEntities1())
+                    using (laboratorioDBEntities2 db= new laboratorioDBEntities2())
                     {
                         var oCita = new CITA();
                         oCita.NOMBREPACIENTE = model.NamePacient;
@@ -57,15 +57,15 @@ namespace PFinalTeleinf.Controllers
                         oCita.CEDULA = model.CedulaPacient;
                         oCita.DIRECCION = model.DireccionPacient;
                         oCita.TELEFONO = model.TelefonoPacient;
-                        //oCita.FECHANACIMIENTO = model.FechaNac;
-                        //oCita.FECHAPROGRAMADA = model.FechaPrCita;
+                        oCita.FECHANACIMIENTO = model.FechaNac;
+                        oCita.FECHAPROGRAMADA = model.FechaPrCita;
 
                         db.CITA.Add(oCita);
                         db.SaveChanges();
                         
                         
                     }
-                  return Redirect("/");
+                  return Redirect("/laboratorioDB/MostrarCita");
                 }
 
                 return View(model);
@@ -77,6 +77,47 @@ namespace PFinalTeleinf.Controllers
         }
 
 
-              
+
+        public ActionResult CrearResultadoPaciente()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CrearResultadoPaciente(CrearResultadoViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    using (laboratorioDBEntities2 db = new laboratorioDBEntities2())
+                    {
+                        var oResultado = new RESULTADO_PACIENTE();
+                        oResultado.NOMBREPACIENTE = model.NOMBREPACIENTE;
+                        oResultado.APELLIDO = model.APELLIDO;
+                        oResultado.CEDULA = model.CEDULA;
+                        oResultado.DIRECCION = model.DIRECCION;
+                        oResultado.TELEFONO = model.TELEFONO;
+                        oResultado.FECHANACIMIENTO = model.FECHANACIM;
+                        oResultado.FECHAPROGRAMADA = model.FECHAPROGRAMADA;
+                        oResultado.FECHARESULTADO = model.FECHARESULTADO;
+
+
+                        db.RESULTADO_PACIENTE.Add(oResultado);
+                        db.SaveChanges();
+
+
+                    }
+                    return Redirect("/laboratorioDB/VerResultadoPaciente");
+                }
+
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }

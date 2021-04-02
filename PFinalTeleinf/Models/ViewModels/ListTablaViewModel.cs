@@ -20,9 +20,9 @@ namespace PFinalTeleinf.Models.ViewModels
 
         public string TelefonoPacient { get; set; }
 
-        public DateTime FechaNac { get; set; }
+        public string FechaNac { get; set; }
 
-        public DateTime FechaPrCita { get; set; }
+        public string FechaPrCita { get; set; }
          
     }
 }

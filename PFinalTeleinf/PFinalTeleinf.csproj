@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>false</Use64BitIISExpress>
     <IISExpressSSLPort>44365</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -145,6 +145,7 @@
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModels\CrearPacienteViewModel.cs" />
+    <Compile Include="Models\ViewModels\CrearResultadoViewModel.cs" />
     <Compile Include="Models\ViewModels\DB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -248,7 +249,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -259,7 +259,7 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\laboratorioDB\CrearCita.cshtml" />
-    <Content Include="Views\laboratorioDB\Index.cshtml" />
+    <Content Include="Views\laboratorioDB\MostrarCita.cshtml" />
     <Content Include="Views\laboratorioDB\CrearResultadoPaciente.cshtml" />
     <Content Include="Views\laboratorioDB\VerResultadoPaciente.cshtml" />
   </ItemGroup>

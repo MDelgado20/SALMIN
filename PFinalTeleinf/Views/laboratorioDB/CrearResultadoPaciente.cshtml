@@ -1,5 +1,4 @@
-﻿
-
+﻿@model PFinalTeleinf.Models.ViewModels.CrearResultadoViewModel
 @{
     ViewBag.Title = "CrearResultadoPaciente";
 }
@@ -12,9 +11,10 @@
 <html class="no-js" lang="">
 <!--<![endif]-->
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SALMI</title>
+    <title>SALMIN</title>
     <meta name="description" content="Laboratorios | MINSA">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,215 +35,219 @@
 
 
 </head>
-<body>
-    <!-- Left Panel -->
+@using (Html.BeginForm("CrearResultadoPaciente", "laboratorioDB", FormMethod.Post))
+{
+    <body>
+        <!-- Left Panel -->
 
 
 
 
 
-    <div class="breadcrumbs">
-        <div class="breadcrumbs-inner">
-            <div class="row m-0">
-                <div class="col-sm-4">
-                    <div class="page-header float-left">
-                        <div class="page-title">
-                            <h1>Tablero</h1>
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>Tablero</h1>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-8">
-                    <div class="page-header float-right">
-                        <div class="page-title">
-                            <ol class="breadcrumb text-right">
-                                <li><a href="#">Tablero</a></li>
-                                <li><a href="#">Menú</a></li>
-                                <li class="active">Crear Resultados</li>
-                            </ol>
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#">Tablero</a></li>
+                                    <li><a href="#">Menú</a></li>
+                                    <li class="active">Crear Resultados</li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="content">
-        <div class="animated fadeIn">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header"><strong>Registrar Resultados Del Paciente</strong></div>
-                        <div class="card-body card-block">
-                            <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
-                                <!--RESULTADOS DE PACIENTES-->
-                                <h3>Datos del Paciente</h3><br>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="text-input">Nombre</label>
-                                        <input type="text" class="form-control" id="inputEmail4" placeholder="Nombre">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="text-input">Apellido</label>
-                                        <input type="text" class="form-control" id="inputPassword4" placeholder="Apellido">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="text-input">Cédula</label>
-                                        <input type="text" class="form-control" id="inputPassword4" placeholder="Cédula">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="text-input">Dirección</label>
-                                        <input type="text" class="form-control" id="inputPassword4" placeholder="Dirección">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="text-input">Teléfono</label>
-                                        <input type="text" class="form-control" id="inputPassword4" placeholder="Teléfono">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="text-input">Fecha de Nacimiento</label>
-                                        <input type="date" class="form-control" id="inputPassword4" placeholder="Password">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="text-input">Fecha Programada</label>
-                                        <input type="date" class="form-control" id="inputPassword4" placeholder="Password">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="text-input">Fecha de Resultados</label>
-                                        <input type="date" class="form-control" id="inputPassword4" placeholder="Password">
-                                    </div>
+        <div class="content">
+            <div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header"><strong>Registrar Resultados Del Paciente</strong></div>
+                            <div class="card-body card-block">
+                                <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                    <!--RESULTADOS DE PACIENTES-->
+                                    <h3>Datos del Paciente</h3><br>
+                                                               <div class="form-row">
+                                                                   <div class="form-group col-md-6">
+                                                                       <label for="text-input">Nombre</label>
+                                                                       @Html.TextBoxFor(d => d.NOMBREPACIENTE, "", new { @class = "form-control", @placeholder = "Escriba el nombre..." })
+                                                                   </div>
+                                                                   <div class="form-group col-md-6">
+                                                                       <label for="text-input">Apellido</label>
+                                                                       @Html.TextBoxFor(d => d.APELLIDO, "", new { @class = "form-control", @placeholder = "Escriba el apellido..." })
+                                                                   </div>
+                                                                   <div class="form-group col-md-6">
+                                                                       <label for="text-input">Cédula</label>
+                                                                       @Html.TextBoxFor(d => d.CEDULA, "", new { @class = "form-control", @placeholder = "Escriba el cedula..." })
+                                                                   </div>
+                                                                   <div class="form-group col-md-6">
+                                                                       <label for="text-input">Dirección</label>
+                                                                       @Html.TextBoxFor(d => d.DIRECCION, "", new { @class = "form-control", @placeholder = "Escriba el dirección..." })
+                                                                   </div>
+                                                                   <div class="form-group col-md-6">
+                                                                       <label for="text-input">Teléfono</label>
+                                                                       @Html.TextBoxFor(d => d.TELEFONO, "", new { @class = "form-control", @placeholder = "Escriba el telefono..." })
+                                                                   </div>
+                                                                   <div class="form-group col-md-6">
+                                                                       <label for="text-input">Fecha de Nacimiento</label>
+                                                                       @Html.TextBoxFor(d => d.FECHANACIM, "", new { @class = "form-control", @type="date"})
+                                                                   </div>
+                                                                   <div class="form-group col-md-6">
+                                                                       <label for="text-input">Fecha Programada</label>
+                                                                       @Html.TextBoxFor(d => d.FECHAPROGRAMADA, "", new { @class = "form-control", @type = "date"})
+                                                                   </div>
+                                                                   <div class="form-group col-md-6">
+                                                                       <label for="text-input">Fecha de Resultados</label>
+                                                                       @Html.TextBoxFor(d => d.FECHARESULTADO, "", new { @class = "form-control", @type = "date"})
+                                                                   </div>
+                                                                   <input value="Guardar" class="btn btn-sm" type="submit">
 
-                                </div>
+                                                               </div>
 
-                                <br>
-                                <h3>Resultados del Paciente</h3><br>
+                                    <br>
+                                    <h3>Resultados del Paciente</h3><br>
 
-                                <!--RESULTADOS HEMATOLOGIA-->
+                                    <!--RESULTADOS HEMATOLOGIA-->
 
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><h3><label for="text-input" class=" form-control-label">HEMATOLOGIA:</label></h3></div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Hemoglobina</label>
-                                        <input type="text" class="form-control" id="inputZip">
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><h4><label for="text-input" class=" form-control-label">HEMATOLOGIA:</label></h4></div>
                                     </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Hematocritos</label>
-                                        <input type="text" class="form-control" id="inputZip">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Hemoglobina</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Hematocritos</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Globulos</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Plaquetas</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Leucocitos</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Linfocitos</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Monocitos</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Globulos</label>
-                                        <input type="text" class="form-control" id="inputZip">
+                                    <!--RESULTADOS HEMATOLOGIA-->
+                                    <!--RESULTADOS QUIMICA CLINICA-->
+                                    <br>
+                                    <div class="row form-group">
+                                        <div class="col col-md-12"><h4><label for="text-input" class=" form-control-label">QUIMICA CLINICA:</label></h4></div>
                                     </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Plaquetas</label>
-                                        <input type="text" class="form-control" id="inputZip">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Glicemia</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Acido Urico</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Colesterol</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Trigliceridos</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Leucocitos</label>
-                                        <input type="text" class="form-control" id="inputZip">
+                                    <!--RESULTADOS QUIMICA CLINICA-->
+                                    <!--RESULTADOS ORINA-->
+                                    <br>
+                                    <div class="row form-group">
+                                        <div class="col col-md-3"><h4><label for="text-input" class=" form-control-label">ORINA:</label></h4></div>
                                     </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Linfocitos</label>
-                                        <input type="text" class="form-control" id="inputZip">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Color</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Aspecto</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">PH</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Glucosa</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Sangre Oculta</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Nitrito</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Mucosa</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip">Bacteria</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Monocitos</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                </div>
-                                <!--RESULTADOS HEMATOLOGIA-->
-                                <!--RESULTADOS QUIMICA CLINICA-->
-                                <br>
-                                <div class="row form-group">
-                                    <div class="col col-md-12"><h3><label for="text-input" class=" form-control-label">QUIMICA CLINICA:</label></h3></div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Glicemia</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Acido Urico</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Colesterol</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Trigliceridos</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                </div>
-                                <!--RESULTADOS QUIMICA CLINICA-->
-                                <!--RESULTADOS ORINA-->
-                                <br>
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><h3><label for="text-input" class=" form-control-label">ORINA:</label></h3></div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Color</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Aspecto</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">PH</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Glucosa</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Sangre Oculta</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Nitrito</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Mucosa</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="inputZip">Bacteria</label>
-                                        <input type="text" class="form-control" id="inputZip">
-                                    </div>
-                                </div>
-                                <!--RESULTADOS ORINA-->
-                            </form>
+                                    <!--RESULTADOS ORINA-->
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-sm">
+                                    <i class="fa fa-dot-circle-o"></i> Crear Resultados
+                                </button>
+                                <button id="btnCancel" type="reset" class="btn btn-sm">
+                                    <i class="fa fa-ban"></i> Cancelar
+                                </button>
+                            </div>
                         </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-sm">
-                                <i class="fa fa-dot-circle-o"></i> Crear Resultados
-                            </button>
-                            <button id="btnCancel" type="reset" class="btn btn-sm">
-                                <i class="fa fa-ban"></i> Cancelar
-                            </button>
-                        </div>
+
                     </div>
 
                 </div>
 
-            </div>
-
-        </div><!-- .animated -->
-    </div><!-- .content -->
-    <!-- Right Panel -->
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+        <!-- Right Panel -->
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
 
 
 
-</body>
+    </body>
+}
 </html>
 
 
