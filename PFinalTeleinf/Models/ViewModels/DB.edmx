@@ -543,7 +543,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="laboratorioDBEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="laboratorioDBEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CITA" EntityType="Self.CITA" />
           <EntitySet Name="CITA_TIPOEXAMEN" EntityType="Self.CITA_TIPOEXAMEN" />
           <EntitySet Name="NOMBRE_EXAMEN" EntityType="Self.NOMBRE_EXAMEN" />
@@ -603,7 +603,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="laboratorioDBModelStoreContainer" CdmEntityContainer="laboratorioDBEntities2">
+        <EntityContainerMapping StorageEntityContainer="laboratorioDBModelStoreContainer" CdmEntityContainer="laboratorioDBEntities3">
           <EntitySetMapping Name="CITA">
             <EntityTypeMapping TypeName="laboratorioDBModel.CITA">
               <MappingFragment StoreEntitySet="CITA">
@@ -726,7 +726,7 @@
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

@@ -38,5 +38,6 @@ namespace PFinalTeleinf.Models.ViewModels
         [Required]
         public string FechaPrCita { get; set; }
 
+        public bool check1 { get; set; }
     }
 }
