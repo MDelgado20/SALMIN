@@ -16,7 +16,7 @@ namespace PFinalTeleinf.Controllers
         public ActionResult MostrarCita()
         {
             List<ListTablaViewModel> lst;
-            using (laboratorioDBEntities3 db = new laboratorioDBEntities3())
+            using (laboratorioDBEntities2 db = new laboratorioDBEntities2())
             {
                  lst = (from d in db.CITA
                            select new ListTablaViewModel
@@ -49,7 +49,7 @@ namespace PFinalTeleinf.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (laboratorioDBEntities3 db = new laboratorioDBEntities3())
+                    using (laboratorioDBEntities2 db = new laboratorioDBEntities2())
                     {
                         var oCita = new CITA();
                         oCita.NOMBREPACIENTE = model.NamePacient;
@@ -91,7 +91,7 @@ namespace PFinalTeleinf.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (laboratorioDBEntities3 db = new laboratorioDBEntities3())
+                    using (laboratorioDBEntities2 db = new laboratorioDBEntities2())
                     {
                         var oResultado = new RESULTADO_PACIENTE();
                         oResultado.NOMBREPACIENTE = model.NOMBREPACIENTE;
