@@ -162,6 +162,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\ListTablaResult.cs" />
     <Compile Include="Models\ViewModels\ListTablaViewModel.cs" />
     <Compile Include="Models\ViewModels\NOMBRE_EXAMEN.cs">
       <DependentUpon>DB.tt</DependentUpon>

@@ -120,5 +120,31 @@ namespace PFinalTeleinf.Controllers
             }
         }
 
+        public ActionResult VerResultadoPaciente()
+        {
+            List<ListTablaResult> lst;
+            using (laboratorioDBEntities2 db = new laboratorioDBEntities2())
+            {
+                lst = (from d in db.RESULTADO_PACIENTE
+                       select new ListTablaResult
+                       {
+                          ID_RESULTADOPACIENTE = d.ID_RESULTADOPACIENTE,
+                          NOMBREPACIENTE = d.NOMBREPACIENTE,
+                          APELLIDO = d.APELLIDO,
+                          CEDULA = d.CEDULA,
+                          DIRECCION = d.DIRECCION,
+                          TELEFONO = d.TELEFONO,
+                          FECHANACIMIENTO = d.FECHANACIMIENTO,
+                          FECHAPROGRAMADA = d.FECHAPROGRAMADA,
+                          FECHARESULTADO = d.FECHARESULTADO,
+                          //ID_CITA = (int)d.ID_CITA,
+                          //ID_USUARIO = (int)d.ID_USUARIO
+
+                       }).ToList();
+            }
+            return View(lst);
+        }
+
+
     }
 }
