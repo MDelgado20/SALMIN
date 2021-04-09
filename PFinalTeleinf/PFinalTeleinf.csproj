@@ -189,6 +189,7 @@
   <ItemGroup>
     <Content Include="assets\css\cs-skin-elastic.css" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\js\main.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

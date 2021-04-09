@@ -62,13 +62,24 @@ namespace PFinalTeleinf.Controllers
 
                         db.CITA.Add(oCita);
                         db.SaveChanges();
+                        
+                        if (model.check1 == true)
+                        {
+                            return Redirect("/laboratorioDB/CrearResultadoPaciente");
+                            var oTipoEx = new CITA_TIPOEXAMEN();    
+                            //var oTipoE = new TIPOEXAMEN();
+                            //oTipoEx.ID_CITA = model.IdCita;
+                            oTipoEx.ID_TIPOEXAMEN = 1;
 
-                        
-                        
-                    }
-                  return Redirect("/laboratorioDB/MostrarCita");
+                            
+                        }
+                        //return Redirect("/laboratorioDB/MostrarCita");
+
+                        //oTipoEx.ID_TIPOEXAMEN = model.check2;
+                        //db.CITA_TIPOEXAMEN.Add(oTipoEx);
+                        //db.SaveChanges();
+                    }                 
                 }
-
                 return View(model);
             }
             catch(Exception ex)
@@ -76,8 +87,6 @@ namespace PFinalTeleinf.Controllers
                 throw new Exception(ex.Message);
             }
         }
-
-
 
         public ActionResult CrearResultadoPaciente()
         {
