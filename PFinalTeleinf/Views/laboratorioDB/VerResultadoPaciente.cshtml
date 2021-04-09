@@ -1,6 +1,8 @@
-﻿@{
+﻿@model List<PFinalTeleinf.Models.ViewModels.ListTablaResult>
+@{
     ViewBag.Title = "VerResultadoPaciente";
 }
+
 
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -77,21 +79,25 @@
                                 <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Nombre</th>
                                             <th>Cedula</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
                                             <th>Fecha de Resultados</th>
                                             <th>Resultados de la cita</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach (var Element in Model)
+                                        {
                                         <tr>
-                                            <td>Maria Delgado</td>
-                                            <td>6722656</td>
-                                            <td>2021-3-21</td>
-                                            <td>
-                                                <button id="btn-resultados" type="button" class="btn btn-info">Ver Detalles de Resultados</button>
-                                            </td>
+                                            <td>@Element.CEDULA</td>
+                                            <td>@Element.NOMBREPACIENTE</td>
+                                            <td>@Element.APELLIDO</td>
+                                            <td>@Element.FECHARESULTADO</td>
+                                            <td><button id="btn-cita" type="button" class="btn btn-info">Mostrar</button>
+
                                         </tr>
+                                        }
                                     </tbody>
                                 </table>
                             </div>
