@@ -12,7 +12,7 @@ namespace PFinalTeleinf.Filters
     public class AuthorizeUser : AuthorizeAttribute
     {
         private USUARIO oUsuario;
-        private laboratorioDBEntities4 db = new laboratorioDBEntities4();
+        private laboratorioDBEntities2 db = new laboratorioDBEntities2();
         private int idOperacion;
     }
 }

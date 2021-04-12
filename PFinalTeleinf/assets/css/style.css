@@ -10,14 +10,13 @@ p.small {
     line-height: 0.2;
 }
 
-#rol {
-    
-        
+
+
+#NombreUser {
+    font-weight: bold;
+    font-size: large;
 }
-#NombreUser{
-    font-weight:bold;
-    font-size:large;
-}
+
 #antiSubray {
     text-decoration: none;
     color: #607d8b;

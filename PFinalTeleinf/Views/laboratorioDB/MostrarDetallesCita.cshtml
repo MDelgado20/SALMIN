@@ -1,4 +1,4 @@
-﻿
+﻿@model List<PFinalTeleinf.Models.ViewModels.ListTablaViewModel>
 @{
     ViewBag.Title = "MostrarDetallesCita";
 }
@@ -33,57 +33,66 @@
     <!-- Left Panel -->
     <!-- Right Panel -->
 
-    
-        <div class="content">
-            <div class="animated fadeIn">
-                <div class="content">
-                    <div id="box-resultados" class="col-lg-10">
 
-                        <br>
-                        <br>
-                        <h2 class="card-title" style="font-weight: bold">Detalles de la cita</h2>
-                        <div class="card">
+    <div class="content">
+        <div class="animated fadeIn">
+            <div class="content">
+                <div id="box-resultados" class="col-lg-10">
 
-                            <div class="card-header">
-                                <div id="card-patient" class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Paciente: <td>Maria Delgado</td></h5>
+                    <br>
+                    <br>
+                    <h2 class="card-title" style="font-weight: bold">Detalles de la cita</h2>
+                    <div class="card">
+
+                        <div class="card-header">
+                            <div id="card-patient" class="card">
+                                <div class="card-body">
+
+                                    @foreach (var Element in Model)
+                                    {
+                                        <h5 class="card-title">Paciente: <td>@Element.NamePacient @Element.ApellidoPacient</td></h5>
                                         <hr>
-                                        <p class="card-text">Cedula: <td>6722656</td></p>
-                                        <p class="card-text">Factura: <td>232355</td></p>
-                                        <p class="card-text">F/N: <td>ABCDF</td></p>
-                                        <p class="card-text">Edad: <td>23</td></p>
-                                        <p class="card-text">Emisión: <td>ABCD</td></p>
+                                        <p class="card-text">Cedula: <td>@Element.CedulaPacient</td></p>
+                                        <p class="card-text">Edad: <td>22</td></p>
+                                        <p class="card-text">Fecha de Nacimiento: <td>@Element.FechaNac</td></p>
+                                        <p class="card-text">Fecha de la cita: <td>@Element.FechaPrCita</td></p>
+                                    }
 
-                                    </div>
                                 </div>
-                                <strong class="card-title">Resultados</strong>
                             </div>
-                            <div class="card-body">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Caracteristica</th>
-                                            <th scope="col">Resultado</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Hemoglobina</th>
-                                            <td>14.0</td>
-                                            
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
+                            <strong class="card-title">Examenes a realizar al paciente</strong>
                         </div>
-                    </div><!-- .animated -->
-                </div><!-- .content -->
-            </div><!-- .animated -->
-        </div><!-- .content -->
-    
+
+                        <div class="card-body">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col">Tipo de examen</th>
+
+                                        <td>Hematologia</td>
+
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <th>Nombre examen</th>
+
+                                        <td>Hemoglobina</td>
+                                        <td>Globulos</td>
+                                        <td>Plaquetas</td>
+                                        <td>Linfocitos</td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div><!-- .animated -->
+            </div><!-- .content -->
+        </div><!-- .animated -->
+    </div><!-- .content -->
     <!-- Right Panel -->
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>

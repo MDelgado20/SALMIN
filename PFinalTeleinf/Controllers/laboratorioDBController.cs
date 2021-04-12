@@ -72,12 +72,7 @@ namespace PFinalTeleinf.Controllers
                 throw new Exception(ex.Message);
             }
         }
-
-        //public ActionResult MostrarDetallesCita()
-        //{
-
-        //}
-
+               
         public ActionResult CrearResultadoPaciente()
         {
             return View();
@@ -144,12 +139,7 @@ namespace PFinalTeleinf.Controllers
             return View(lst);
         }
 
-        public ActionResult MostrarDetallesCita()
-        {
-            return View();
-        }
-
-        //public ActionResult MostrarDetallesCita() { }
+         
         
 
 
@@ -178,7 +168,7 @@ namespace PFinalTeleinf.Controllers
                     Session["User"] = oUser;
                     Session["ValorNombre"] = nameUser;
                 }
-                return RedirectToAction("VerResultadoPaciente");
+                return RedirectToAction("MostrarCita");
             }
             catch (Exception ex)
             {
@@ -188,6 +178,30 @@ namespace PFinalTeleinf.Controllers
 
         }
 
+       
+
+        public ActionResult MostrarDetallesCita()
+        {
+            List<ListTablaViewModel> lst;
+            using (laboratorioDBEntities4 db = new laboratorioDBEntities4())
+            {
+                lst = (from d in db.CITA
+                       select new ListTablaViewModel
+                       {
+                           IdCita = d.ID_CITA,
+                           //IdUser = (int)d.ID_USUARIO,
+                           NamePacient = d.NOMBREPACIENTE,
+                           ApellidoPacient = d.APELLIDO,
+                           CedulaPacient = d.CEDULA,
+                           DireccionPacient = d.DIRECCION,
+                           TelefonoPacient = d.TELEFONO,
+                           FechaNac = d.FECHANACIMIENTO,
+                           FechaPrCita = d.FECHAPROGRAMADA
+
+                       }).ToList();
+            }
+            return View(lst);
+        }
 
     }
 }
