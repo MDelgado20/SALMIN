@@ -16,7 +16,7 @@ namespace PFinalTeleinf.Controllers
         public ActionResult MostrarCita()
         {
             List<ListTablaViewModel> lst;
-            using (laboratorioDBEntities4 db = new laboratorioDBEntities4())
+            using (laboratorioDBEntities2 db = new laboratorioDBEntities2())
             {
                  lst = (from d in db.CITA
                            select new ListTablaViewModel
@@ -48,7 +48,7 @@ namespace PFinalTeleinf.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (laboratorioDBEntities4 db = new laboratorioDBEntities4())
+                    using (laboratorioDBEntities2 db = new laboratorioDBEntities2())
                     {
                         var oCita = new CITA();
                         oCita.NOMBREPACIENTE = model.NamePacient;
@@ -90,7 +90,7 @@ namespace PFinalTeleinf.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (laboratorioDBEntities4 db = new laboratorioDBEntities4())
+                    using (laboratorioDBEntities2 db = new laboratorioDBEntities2())
                     {
                         var oResultado = new RESULTADO_PACIENTE();
                         oResultado.NOMBREPACIENTE = model.NOMBREPACIENTE;
@@ -98,9 +98,9 @@ namespace PFinalTeleinf.Controllers
                         oResultado.CEDULA = model.CEDULA;
                         oResultado.DIRECCION = model.DIRECCION;
                         oResultado.TELEFONO = model.TELEFONO;
-                        //oResultado.FECHANACIMIENTO = model.FECHANACIM;
-                        //oResultado.FECHAPROGRAMADA = model.FECHAPROGRAMADA;
-                        //oResultado.FECHARESULTADO = model.FECHARESULTADO;
+                        oResultado.FECHANACIMIENTO = model.FECHANACIM;
+                        oResultado.FECHAPROGRAMADA = model.FECHAPROGRAMADA;
+                        oResultado.FECHARESULTADO = model.FECHARESULTADO;
 
 
                         db.RESULTADO_PACIENTE.Add(oResultado);
@@ -122,7 +122,7 @@ namespace PFinalTeleinf.Controllers
         public ActionResult VerResultadoPaciente()
         {
             List<ListTablaResult> lst;
-            using (laboratorioDBEntities4 db = new laboratorioDBEntities4())
+            using (laboratorioDBEntities2 db = new laboratorioDBEntities2())
             {
                 lst = (from d in db.RESULTADO_PACIENTE
                        select new ListTablaResult
@@ -133,11 +133,11 @@ namespace PFinalTeleinf.Controllers
                           CEDULA = d.CEDULA,
                           DIRECCION = d.DIRECCION,
                           TELEFONO = d.TELEFONO,
-                          //FECHANACIMIENTO = d.FECHANACIMIENTO,
-                          //FECHAPROGRAMADA = d.FECHAPROGRAMADA,
-                          //FECHARESULTADO = d.FECHARESULTADO,
-                          //ID_CITA = (int)d.ID_CITA,
-                          //ID_USUARIO = (int)d.ID_USUARIO
+                           FECHANACIMIENTO = d.FECHANACIMIENTO,
+                           FECHAPROGRAMADA = d.FECHAPROGRAMADA,
+                           FECHARESULTADO = d.FECHARESULTADO,
+                           //ID_CITA = (int)d.ID_CITA,
+                           //ID_USUARIO = (int)d.ID_USUARIO
 
                        }).ToList();
             }
