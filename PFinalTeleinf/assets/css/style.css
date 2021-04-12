@@ -6,8 +6,27 @@
 #card-patient {
     width: 40rem;
 }
+p.small {
+    line-height: 0.2;
+}
 
+#rol {
+    
+        
+}
+#NombreUser{
+    font-weight:bold;
+    font-size:large;
+}
 #antiSubray {
+    text-decoration: none;
+    color: #607d8b;
+}
+#antiSubray1 {
+    text-decoration: none;
+    color: #607d8b;
+}
+#antiSubray2 {
     text-decoration: none;
     color: #607d8b;
 }

@@ -13,10 +13,10 @@ namespace PFinalTeleinf.Models.ViewModels
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class laboratorioDBEntities3 : DbContext
+    public partial class laboratorioDBEntities4 : DbContext
     {
-        public laboratorioDBEntities3()
-            : base("name=laboratorioDBEntities3")
+        public laboratorioDBEntities4()
+            : base("name=laboratorioDBEntities4")
         {
         }
     

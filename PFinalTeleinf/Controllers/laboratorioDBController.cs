@@ -16,7 +16,7 @@ namespace PFinalTeleinf.Controllers
         public ActionResult MostrarCita()
         {
             List<ListTablaViewModel> lst;
-            using (laboratorioDBEntities3 db = new laboratorioDBEntities3())
+            using (laboratorioDBEntities4 db = new laboratorioDBEntities4())
             {
                  lst = (from d in db.CITA
                            select new ListTablaViewModel
@@ -41,7 +41,6 @@ namespace PFinalTeleinf.Controllers
             return View();
         } 
 
-
         [HttpPost]
         public ActionResult CrearCita(CrearPacienteViewModel model)
         {
@@ -49,7 +48,7 @@ namespace PFinalTeleinf.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (laboratorioDBEntities3 db = new laboratorioDBEntities3())
+                    using (laboratorioDBEntities4 db = new laboratorioDBEntities4())
                     {
                         var oCita = new CITA();
                         oCita.NOMBREPACIENTE = model.NamePacient;
@@ -62,13 +61,10 @@ namespace PFinalTeleinf.Controllers
 
                         db.CITA.Add(oCita);
                         db.SaveChanges();
-
                         
                         
-                    }
-                  return Redirect("/laboratorioDB/MostrarCita");
+                    }                 
                 }
-
                 return View(model);
             }
             catch(Exception ex)
@@ -77,7 +73,10 @@ namespace PFinalTeleinf.Controllers
             }
         }
 
+        //public ActionResult MostrarDetallesCita()
+        //{
 
+        //}
 
         public ActionResult CrearResultadoPaciente()
         {
@@ -91,7 +90,7 @@ namespace PFinalTeleinf.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    using (laboratorioDBEntities3 db = new laboratorioDBEntities3())
+                    using (laboratorioDBEntities4 db = new laboratorioDBEntities4())
                     {
                         var oResultado = new RESULTADO_PACIENTE();
                         oResultado.NOMBREPACIENTE = model.NOMBREPACIENTE;
@@ -99,9 +98,9 @@ namespace PFinalTeleinf.Controllers
                         oResultado.CEDULA = model.CEDULA;
                         oResultado.DIRECCION = model.DIRECCION;
                         oResultado.TELEFONO = model.TELEFONO;
-                        oResultado.FECHANACIMIENTO = model.FECHANACIM;
-                        oResultado.FECHAPROGRAMADA = model.FECHAPROGRAMADA;
-                        oResultado.FECHARESULTADO = model.FECHARESULTADO;
+                        //oResultado.FECHANACIMIENTO = model.FECHANACIM;
+                        //oResultado.FECHAPROGRAMADA = model.FECHAPROGRAMADA;
+                        //oResultado.FECHARESULTADO = model.FECHARESULTADO;
 
 
                         db.RESULTADO_PACIENTE.Add(oResultado);
@@ -119,6 +118,76 @@ namespace PFinalTeleinf.Controllers
                 throw new Exception(ex.Message);
             }
         }
+
+        public ActionResult VerResultadoPaciente()
+        {
+            List<ListTablaResult> lst;
+            using (laboratorioDBEntities4 db = new laboratorioDBEntities4())
+            {
+                lst = (from d in db.RESULTADO_PACIENTE
+                       select new ListTablaResult
+                       {
+                          ID_RESULTADOPACIENTE = d.ID_RESULTADOPACIENTE,
+                          NOMBREPACIENTE = d.NOMBREPACIENTE,
+                          APELLIDO = d.APELLIDO,
+                          CEDULA = d.CEDULA,
+                          DIRECCION = d.DIRECCION,
+                          TELEFONO = d.TELEFONO,
+                          //FECHANACIMIENTO = d.FECHANACIMIENTO,
+                          //FECHAPROGRAMADA = d.FECHAPROGRAMADA,
+                          //FECHARESULTADO = d.FECHARESULTADO,
+                          //ID_CITA = (int)d.ID_CITA,
+                          //ID_USUARIO = (int)d.ID_USUARIO
+
+                       }).ToList();
+            }
+            return View(lst);
+        }
+
+        public ActionResult MostrarDetallesCita()
+        {
+            return View();
+        }
+
+        //public ActionResult MostrarDetallesCita() { }
+        
+
+
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(string nameUser, string idrol)
+        {
+            try
+            {
+                using (laboratorioDBEntities4 db = new laboratorioDBEntities4())
+                {
+                    var oUser = (from d in db.USUARIO
+                                 where d.NOMBREUSUARIO == nameUser.Trim()
+                                 select d).FirstOrDefault();
+
+                   
+                    if(oUser == null)
+                    {
+                        ViewBag.Error = "Usuario o contraseña invalida";
+                        return View();
+                    }
+                    Session["User"] = oUser;
+                    Session["ValorNombre"] = nameUser;
+                }
+                return RedirectToAction("VerResultadoPaciente");
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+                return View();
+            }
+
+        }
+
 
     }
 }

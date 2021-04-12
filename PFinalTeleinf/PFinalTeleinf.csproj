@@ -136,6 +136,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\laboratorioDBController.cs" />
+    <Compile Include="Filters\AuthorizeUser.cs" />
+    <Compile Include="Filters\VerificaSession.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -162,6 +164,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\ListTablaResult.cs" />
     <Compile Include="Models\ViewModels\ListTablaViewModel.cs" />
     <Compile Include="Models\ViewModels\NOMBRE_EXAMEN.cs">
       <DependentUpon>DB.tt</DependentUpon>
@@ -188,7 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\cs-skin-elastic.css" />
+    <Content Include="assets\css\login.css" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\images\1282794.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -263,6 +268,8 @@
     <Content Include="Views\laboratorioDB\MostrarCita.cshtml" />
     <Content Include="Views\laboratorioDB\CrearResultadoPaciente.cshtml" />
     <Content Include="Views\laboratorioDB\VerResultadoPaciente.cshtml" />
+    <Content Include="Views\laboratorioDB\MostrarDetallesCita.cshtml" />
+    <Content Include="Views\laboratorioDB\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
