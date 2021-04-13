@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="ID_CITA" />
           </Key>
-          <Property Name="ID_CITA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_CITA" Type="int" Nullable="false" />
           <Property Name="ID_USUARIO" Type="int" />
           <Property Name="NOMBREPACIENTE" Type="nvarchar" MaxLength="50" />
           <Property Name="APELLIDO" Type="nvarchar" MaxLength="50" />
@@ -23,7 +23,7 @@
           <Key>
             <PropertyRef Name="ID_CITA_EXAMEN" />
           </Key>
-          <Property Name="ID_CITA_EXAMEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_CITA_EXAMEN" Type="int" Nullable="false" />
           <Property Name="ID_TIPOEXAMEN" Type="int" />
           <Property Name="ID_NOMBRE_EXAMEN" Type="int" />
           <Property Name="ID_CITA" Type="int" />
@@ -32,7 +32,7 @@
           <Key>
             <PropertyRef Name="ID_NOMBRE_EXAMEN" />
           </Key>
-          <Property Name="ID_NOMBRE_EXAMEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_NOMBRE_EXAMEN" Type="int" Nullable="false" />
           <Property Name="ID_TIPOEXAMEN" Type="int" />
           <Property Name="NOMBRE_EXAMEN" Type="nvarchar" MaxLength="50" />
           <Property Name="RANGO_INFERIOR" Type="nvarchar" MaxLength="50" />
@@ -58,9 +58,9 @@
           <Property Name="CEDULA" Type="nvarchar" MaxLength="50" />
           <Property Name="DIRECCION" Type="nvarchar" MaxLength="50" />
           <Property Name="TELEFONO" Type="nvarchar" MaxLength="50" />
-          <Property Name="FECHANACIMIENTO" Type="nvarchar" MaxLength="50" />
-          <Property Name="FECHAPROGRAMADA" Type="nvarchar" MaxLength="50" />
-          <Property Name="FECHARESULTADO" Type="nvarchar" MaxLength="50" />
+          <Property Name="FECHANACIMIENTO" Type="date" />
+          <Property Name="FECHAPROGRAMADA" Type="date" />
+          <Property Name="FECHARESULTADO" Type="date" />
           <Property Name="ID_CITA" Type="int" />
           <Property Name="ID_USUARIO" Type="int" />
         </EntityType>
@@ -85,7 +85,7 @@
           <Key>
             <PropertyRef Name="ID_TIPOEXAMEN" />
           </Key>
-          <Property Name="ID_TIPOEXAMEN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_TIPOEXAMEN" Type="int" Nullable="false" />
           <Property Name="NOMBRE_TIPOEXAMEN" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="USUARIO">
@@ -297,7 +297,7 @@
           <Key>
             <PropertyRef Name="ID_CITA" />
           </Key>
-          <Property Name="ID_CITA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_CITA" Type="Int32" Nullable="false" />
           <Property Name="ID_USUARIO" Type="Int32" />
           <Property Name="NOMBREPACIENTE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="APELLIDO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -314,7 +314,7 @@
           <Key>
             <PropertyRef Name="ID_CITA_EXAMEN" />
           </Key>
-          <Property Name="ID_CITA_EXAMEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_CITA_EXAMEN" Type="Int32" Nullable="false" />
           <Property Name="ID_TIPOEXAMEN" Type="Int32" />
           <Property Name="ID_NOMBRE_EXAMEN" Type="Int32" />
           <Property Name="ID_CITA" Type="Int32" />
@@ -326,7 +326,7 @@
           <Key>
             <PropertyRef Name="ID_NOMBRE_EXAMEN" />
           </Key>
-          <Property Name="ID_NOMBRE_EXAMEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_NOMBRE_EXAMEN" Type="Int32" Nullable="false" />
           <Property Name="ID_TIPOEXAMEN" Type="Int32" />
           <Property Name="NOMBRE_EXAMEN1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="RANGO_INFERIOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -358,9 +358,9 @@
           <Property Name="CEDULA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DIRECCION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TELEFONO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FECHANACIMIENTO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FECHAPROGRAMADA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FECHARESULTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FECHANACIMIENTO" Type="DateTime" Precision="0" />
+          <Property Name="FECHAPROGRAMADA" Type="DateTime" Precision="0" />
+          <Property Name="FECHARESULTADO" Type="DateTime" Precision="0" />
           <Property Name="ID_CITA" Type="Int32" />
           <Property Name="ID_USUARIO" Type="Int32" />
           <NavigationProperty Name="CITA" Relationship="Self.FK_RESULTADO_PACIENTE_CITA" FromRole="RESULTADO_PACIENTE" ToRole="CITA" />
@@ -389,7 +389,7 @@
           <Key>
             <PropertyRef Name="ID_TIPOEXAMEN" />
           </Key>
-          <Property Name="ID_TIPOEXAMEN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_TIPOEXAMEN" Type="Int32" Nullable="false" />
           <Property Name="NOMBRE_TIPOEXAMEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CITA_TIPOEXAMEN" Relationship="Self.FK_CITA_TIPOEXAMEN" FromRole="TIPOEXAMEN" ToRole="CITA_TIPOEXAMEN" />
           <NavigationProperty Name="NOMBRE_EXAMEN" Relationship="Self.FK_NOMBRE_EXAMEN_TIPOEXAMEN" FromRole="TIPOEXAMEN" ToRole="NOMBRE_EXAMEN" />
@@ -543,7 +543,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="laboratorioDBEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="laboratorioDBEntities4" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CITA" EntityType="Self.CITA" />
           <EntitySet Name="CITA_TIPOEXAMEN" EntityType="Self.CITA_TIPOEXAMEN" />
           <EntitySet Name="NOMBRE_EXAMEN" EntityType="Self.NOMBRE_EXAMEN" />
@@ -603,7 +603,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="laboratorioDBModelStoreContainer" CdmEntityContainer="laboratorioDBEntities2">
+        <EntityContainerMapping StorageEntityContainer="laboratorioDBModelStoreContainer" CdmEntityContainer="laboratorioDBEntities4">
           <EntitySetMapping Name="CITA">
             <EntityTypeMapping TypeName="laboratorioDBModel.CITA">
               <MappingFragment StoreEntitySet="CITA">
@@ -726,7 +726,7 @@
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
