@@ -100,14 +100,12 @@ namespace PFinalTeleinf.Controllers
                         oResultado.DIRECCION = model.DIRECCION;
                         oResultado.TELEFONO = model.TELEFONO;
                         oResultado.FECHANACIMIENTO = model.FECHANACIM;
-                        oResultado.FECHAPROGRAMADA = model.FECHAPROGRAMADA;
+                        //oResultado.FECHAPROGRAMADA = model.FECHAPROGRAMADA;
                         oResultado.FECHARESULTADO = model.FECHARESULTADO;
 
 
                         db.RESULTADO_PACIENTE.Add(oResultado);
                         db.SaveChanges();
-
-
                     }
                     return Redirect("/laboratorioDB/VerResultadoPaciente");
                 }
@@ -135,7 +133,7 @@ namespace PFinalTeleinf.Controllers
                           DIRECCION = d.DIRECCION,
                           TELEFONO = d.TELEFONO,
                           FECHANACIMIENTO = d.FECHANACIMIENTO,
-                          FECHAPROGRAMADA = d.FECHAPROGRAMADA,
+                          //FECHAPROGRAMADA = d.FECHAPROGRAMADA,
                           FECHARESULTADO = d.FECHARESULTADO,
                           //ID_CITA = (int)d.ID_CITA,
                           //ID_USUARIO = (int)d.ID_USUARIO
@@ -145,6 +143,11 @@ namespace PFinalTeleinf.Controllers
             return View(lst);
         }
 
+     
+
+        public ActionResult DetallesResultados() {
+            return View();
+        }
 
     }
 }
